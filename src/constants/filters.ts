@@ -1,10 +1,10 @@
 export const filters = [
   {
     name: "Type",
-    url: "",
+    url: "https://pokeapi.co/api/v2/type/",
   },
   {
     name: "Ability",
-    url: "",
+    url: "https://pokeapi.co/api/v2/ability/",
   },
 ];

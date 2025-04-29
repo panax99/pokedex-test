@@ -1,9 +1,9 @@
-import React from 'react'
+import PokemonDetails from "@/components/pokemon/PokemonDetails";
 
-const PokemonPage = () => {
-  return (
-    <div>PokemonPage</div>
-  )
+interface Props {
+  params: { name: string };
 }
 
-export default PokemonPage
+export default function Page({ params }: Props) {
+  return <PokemonDetails name={params.name} />;
+}

@@ -1,10 +1,14 @@
+// usePokemonList.ts
 "use client";
 
 import { DataType, DetailedPokemonType } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 
 export const usePokemonList = (offset: number, limit: number) => {
-  return useQuery<DetailedPokemonType[]>({
+  return useQuery<{
+    pokemons: DetailedPokemonType[];
+    hasMore: boolean;
+  }>({
     queryKey: ["pokemons", offset],
     queryFn: async () => {
       const res = await fetch(
@@ -20,7 +24,10 @@ export const usePokemonList = (offset: number, limit: number) => {
         )
       );
 
-      return detailedData;
+      return {
+        pokemons: detailedData,
+        hasMore: !!data.next,
+      };
     },
     staleTime: 1000 * 60,
   });

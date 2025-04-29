@@ -118,3 +118,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes shadowGradient {
+  0% {
+    box-shadow: 0 0 15px 4px #ff6ec4;
+  }
+  33% {
+    box-shadow: 0 0 15px 4px #7873f5;
+  }
+  66% {
+    box-shadow: 0 0 15px 4px #4ade80;
+  }
+  100% {
+    box-shadow: 0 0 15px 4px #ff6ec4;
+  }
+}
+
+.shadow-gradient-animate {
+  animation: shadowGradient 1.5s infinite linear;
+}
+
+
