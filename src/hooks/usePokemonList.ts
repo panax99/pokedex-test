@@ -1,4 +1,3 @@
-// usePokemonList.ts
 "use client";
 
 import { DataType, DetailedPokemonType } from "@/types/types";
