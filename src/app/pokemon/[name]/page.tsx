@@ -1,9 +1,13 @@
 import PokemonDetails from "@/components/pokemon/PokemonDetails";
 
-interface Props {
-  params: { name: string };
+export default async function Page() {
+  return <PokemonDetails />;
 }
 
-export default function Page({ params }: Props) {
-  return <PokemonDetails name={params.name} />;
+export async function generateStaticParams() {
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+  const data = await res.json();
+  return data.results.map((pokemon: { name: string }) => ({
+    name: pokemon.name,
+  }));
 }

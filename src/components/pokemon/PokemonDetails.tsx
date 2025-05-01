@@ -1,20 +1,19 @@
 "use client";
 
+import React from "react";
 import CustomImage from "@/components/custom-ui/CustomImage";
 import { useFetchPokemon } from "@/hooks/useFetchPokemon";
 import { capitalize } from "@/lib/utils";
 import { getTypeColor } from "@/lib/getTypeColor";
 import { useThemeStore } from "@/store/useThemeStore";
 import { motion } from "framer-motion";
-import React from "react";
+import { useParams } from "next/navigation";
 
-interface PokemonDetailsProps {
-  name: string;
-}
-
-const PokemonDetails = ({ name }: PokemonDetailsProps) => {
+const PokemonDetails = () => {
+  const { name } = useParams();
   const { darkMode } = useThemeStore();
-  const { data: pokemon } = useFetchPokemon(name);
+  const pokemonName = String(name);
+  const { data: pokemon } = useFetchPokemon(pokemonName);
 
   if (!pokemon) return null;
 
