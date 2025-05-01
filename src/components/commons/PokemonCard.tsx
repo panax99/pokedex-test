@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { capitalize } from "@/lib/utils";
 import Image from "next/image";

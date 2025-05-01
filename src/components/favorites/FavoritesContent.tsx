@@ -1,6 +1,7 @@
+"use client"
+import React from "react";
 import { useFavoriteStore } from "@/store/useFavoriteStore";
 import { useSearchStore } from "@/store/useSearchStore";
-import React from "react";
 import PokemonCard from "../commons/PokemonCard";
 
 const FavoritesContent = () => {
