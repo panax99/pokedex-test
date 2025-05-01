@@ -24,7 +24,7 @@ const Header = () => {
       >
         <Menu
           className={`${
-            darkMode ? "text-white" : "text-gray-600"
+            darkMode ? "text-white" : "text-black"
           } flex lg:hidden cursor-pointer`}
           size={30}
           onClick={() => setMobileMenuOpen(true)}
