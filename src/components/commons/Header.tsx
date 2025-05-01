@@ -120,6 +120,8 @@ const Header = () => {
                 <Star size={18} />
                 <div>Favorites</div>
               </Link>
+
+              <SwitchModeButton />
             </div>
           </motion.div>
         )}
